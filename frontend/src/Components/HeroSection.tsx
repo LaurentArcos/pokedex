@@ -1,11 +1,13 @@
 import Header from "./Header"
 import charizardImg from "../assets/images/Charizard_SSBU.png"
+import '../assets/styles/heroSection.scss'
+
 
 const HeroSection = () => {
     return (
         <div className="hero-section">
-            <Header/>
             <div className="main-container">
+                <Header/>
                 <div className="hero-content">
                     <div className="hero-data">
                         <span className="hero-data-number">#006</span>
