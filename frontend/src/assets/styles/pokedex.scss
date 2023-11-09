@@ -1,0 +1,27 @@
+.pokedex {
+  margin-bottom: 9rem;
+
+  .pokedex__pokemons__list {
+    margin: 12.75rem auto 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 12.5rem;
+    column-gap: 2rem;
+
+    @media (max-width: 61.25rem) {
+      grid-template-columns: repeat(2, 1fr);
+
+      div:last-child {
+        grid-column: 1/ -1;
+      }
+    }
+
+    @media (max-width: 40.94rem) {
+      grid-template-columns: 1fr;
+    }
+
+    @media (max-width: 31.25rem) {
+      margin-top: 11.94rem;
+    }
+  }
+}

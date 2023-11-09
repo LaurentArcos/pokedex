@@ -1,0 +1,100 @@
+@import "mixins";
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+
+  font-family: "Montserrat";
+  font-size: 1rem;
+  line-height: 150%;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: #fff;
+
+  img {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &.type--bug {
+    @include pokemon-type('bug');
+  }
+
+  &.type--dark {
+    @include pokemon-type('dark');
+  }
+
+  &.type--dragon {
+    @include pokemon-type('dragon');
+  }
+
+  &.type--electric {
+    @include pokemon-type('electric');
+  }
+
+  &.type--fairy {
+    @include pokemon-type('fairy');
+  }
+
+  &.type--fighting {
+    @include pokemon-type('fighting');
+  }
+
+  &.type--fire {
+    @include pokemon-type('fire');
+  }
+
+  &.type--flying {
+    @include pokemon-type('flying');
+  }
+
+  &.type--ghost {
+    @include pokemon-type('ghost');
+  }
+
+  &.type--grass {
+    @include pokemon-type('grass');
+  }
+
+  &.type--ground {
+    @include pokemon-type('ground');
+  }
+
+  &.type--ice {
+    @include pokemon-type('ice');
+  }
+
+  &.type--normal {
+    @include pokemon-type('normal');
+  }
+
+  &.type--poison {
+    @include pokemon-type('poison');
+  }
+
+  &.type--psychic {
+    @include pokemon-type('psychic');
+  }
+
+  &.type--rock {
+    @include pokemon-type('rock');
+  }
+
+  &.type--steel {
+    @include pokemon-type('steel');
+  }
+
+  &.type--water {
+    @include pokemon-type('water');
+  }
+}
+
+span {
+  font-size: 1rem;
+  line-height: 150%;
+  font-weight: 400;
+}

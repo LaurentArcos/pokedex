@@ -1,0 +1,41 @@
+@mixin pokemon-type($type: 'normal', $colour: #000000){
+  @if ( $type == 'bug' ) {
+    $colour: #7bcf00;
+  } @else if ( $type == 'dark' ) {
+    $colour: #5a566a;
+  } @else if ( $type == 'dragon' ) {
+    $colour: #0076ff;
+  } @else if ( $type == 'electric' ) {
+    $colour: #ffde00;
+  } @else if ( $type == 'fairy' ) {
+    $colour: #ff76ff;
+  } @else if ( $type == 'fighting' ) {
+    $colour: #ff215b;
+  } @else if ( $type == 'fire' ) {
+    $colour: #ff9900;
+  } @else if ( $type == 'flying' ) {
+    $colour: #89bdff;
+  } @else if ( $type == 'ghost' ) {
+    $colour: #4e6aff;
+  } @else if ( $type == 'grass' ) {
+    $colour: #1cd80e;
+  } @else if ( $type == 'ground' ) {
+    $colour: #ff6b0d;
+  } @else if ( $type == 'ice' ) {
+    $colour: #2ee4c6;
+  } @else if ( $type == 'normal' ) {
+    $colour: #9fa39d;
+  } @else if ( $type == 'poison' ) {
+    $colour: #f149ff;
+  } @else if ( $type == 'psychic' ) {
+    $colour: #ff6c64;
+  } @else if ( $type == 'rock' ) {
+    $colour: #d8bc5a;
+  } @else if ( $type == 'steel' ) {
+    $colour: #23a1bd;
+  } @else if ( $type == 'water' ) {
+    $colour: #14a8ff;
+  }
+
+  background: $colour;
+}

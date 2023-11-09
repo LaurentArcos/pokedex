@@ -1,10 +1,10 @@
-import Footer from "./Components/Footer"
-import Header from "./Components/Header"
+import Footer from "./components/Footer"
+import HeroSection from "./components/HeroSection"
 
 const App = () => {
   return (
     <>
-      <Header/>
+      <HeroSection/>
       <Footer/>
     </>
   )
