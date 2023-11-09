@@ -1,8 +1,9 @@
 const Footer = () => {
   return (
-    <footer className="footer">
-      <h1>Footer</h1>
-    </footer>
+      <footer>
+          <span>Image rights for Nintendo & The Pokémon Company</span>
+          <span>Data taken from API - pokeapi.co</span>
+      </footer>
   )
 }
 
