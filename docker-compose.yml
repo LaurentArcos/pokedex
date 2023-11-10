@@ -1,0 +1,17 @@
+version: "3"
+services:
+  frontend:
+    # Avec un image node depuis le docker hub
+    # image: node:20
+    # Depuis le Dockerfile dans le dossier frontend 
+    build:
+      context: ./frontend
+    container_name: frontend
+    ports:
+      - 5173:5173
+    volumes:
+      - ./frontend:/app
+    working_dir: /app
+    tty: true
+    command: npm run dev
+    
