@@ -6,7 +6,7 @@ import { Pokemon } from "../types/Pokemon"
 import { pokemonsArray } from "../data"
 
 const PokedexView = () => {
-    const [pokemonList, setPokemonList] = useState<Pokemon[]>(pokemonsArray)
+    const [pokemonList] = useState<Pokemon[]>(pokemonsArray)
 
     return (
         <>
