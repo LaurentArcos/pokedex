@@ -17,7 +17,7 @@ const HeroSection = () => {
                 <Header/>
                 <div className="hero-content">
                     <div className="hero-data">
-                        <span className="hero-data-number">#006</span>
+                        <span className="hero-data-number">#008</span>
                         <div className="hero-data-types">
                             <PokemonType type="fire"/>
                             <PokemonType type="flying"/>

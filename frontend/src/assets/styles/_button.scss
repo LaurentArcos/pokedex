@@ -1,0 +1,18 @@
+@mixin full_button() {
+  width: 100%;
+}
+
+@mixin button($color: #e14318, $background: #fff) {
+  height: 3rem;
+  background: $background;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  line-height: 150%;
+  font-weight: 700;
+  color: $color;
+  @content
+}

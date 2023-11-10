@@ -1,0 +1,25 @@
+@use 'variables';
+
+@function typeColor($type) {
+    @if ($type ==fire) {
+        @return variables.$fireColor;
+    }
+
+    @else if ($type ==grass) {
+        @return variables.$grassColor;
+    }
+
+    @else if ($type ==flying) {
+        @return variables.$flyingColor;
+    }
+
+    @else if ($type ==poison) {
+        @return variables.$poisonColor;
+    }
+
+    @else if ($type ==water) {
+        @return variables.$waterColor;
+    }
+
+    @return gray;
+}

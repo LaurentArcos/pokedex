@@ -1,3 +1,6 @@
+@use 'button';
+@use 'responsive';
+
 .hero-section {
   background: linear-gradient(180deg, #ee8328 0%, #e14318 100%);
   position: relative;
@@ -102,18 +105,9 @@
       }
 
       .hero-data-button {
-        width: 100%;
-        height: 3rem;
-        background: #fff;
-        border-radius: 0.5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 1rem;
-        line-height: 150%;
-        font-weight: 700;
-        color: #e14318;
+        @include button.button(#fff, #000) {
+          @include button.full_button();
+        };
 
         svg {
           width: 1.5rem;
@@ -124,12 +118,12 @@
           }
         }
 
-        @media (max-width: 71.88rem) {
+        @include responsive.tablet {
           width: 13rem;
           margin: 0 auto;
         }
 
-        @media (max-width: 31.25rem) {
+        @include responsive.phone {
           width: 100%;
         }
       }
