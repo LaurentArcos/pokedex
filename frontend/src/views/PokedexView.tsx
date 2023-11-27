@@ -4,6 +4,7 @@ import HeroSection from "../Components/HeroSection"
 import Pokedex from "../Components/Pokedex"
 import { Pokemon } from "../types/Pokemon"
 import { pokemonsArray } from "../data"
+import SearchPokemon from "../Components/SearchPokemon"
 
 const PokedexView = () => {
     const [pokemonList] = useState<Pokemon[]>(pokemonsArray)
@@ -11,6 +12,7 @@ const PokedexView = () => {
     return (
         <>
             <HeroSection/>
+            <SearchPokemon />
             <Pokedex pokemonList={pokemonList}/>
             <Footer/>
         </>

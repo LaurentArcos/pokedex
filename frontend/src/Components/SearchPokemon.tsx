@@ -5,25 +5,16 @@ const SearchPokemon = () => {
 
     const handleSubmit = (event: SyntheticEvent) => {
         event.preventDefault();
-
+        
         console.log(inputValue);
-    }
-
-    const handleReset = () => {
-        setInputValue("");
     }
 
     return (
         <>
             <div className="main-container">
                 <form onSubmit={handleSubmit}>
-                    <input 
-                        type="text" 
-                        placeholder="Search Pokemon" 
-                        value={inputValue}
-                        onChange={(e) => setInputValue(e.target.value)} />
+                    <input type="text" placeholder="Search Pokemon" value={inputValue} />
                     <button type="submit">Search</button>
-                    <button type="button" onClick={handleReset}>Reset</button>
                 </form>
             </div>
         </>
