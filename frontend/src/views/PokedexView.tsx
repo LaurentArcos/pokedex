@@ -7,11 +7,16 @@ import SearchPokemon from "../Components/SearchPokemon"
 import { fetchPokemonList } from "../api/fetchPokemonList"
 
 const PokedexView = () => {
-    const [pokemonList, setPokemonList] = useState<Pokemon[]>([])
+    const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
+    const [pokemonCount, setPokemonCount] = useState(0);
+    const [page, setPage] = useState(1);
 
     useEffect(() => {
         (async () => {
-            setPokemonList(await fetchPokemonList());
+            const { pokemonData, pokemonCount } = await fetchPokemonList(page);
+
+            setPokemonCount(pokemonCount);
+            setPokemonList(await pokemonData);
         })();
 
         return () => {
@@ -25,10 +30,14 @@ const PokedexView = () => {
 
     return (
         <>
-            <HeroSection/>
+            <HeroSection />
             <SearchPokemon setPokemonList={setPokemonList} />
-            <Pokedex pokemonList={pokemonList}/>
-            <Footer/>
+            <Pokedex
+                pokemonList={pokemonList}
+                pokemonCount={pokemonCount}
+                page={page}
+                setPage={setPage} />
+            <Footer />
         </>
     )
 }

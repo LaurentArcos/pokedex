@@ -18,3 +18,18 @@ interface Type {
 export type SearchPokemonProps = {
   setPokemonList: (data: Pokemon[]) => void
 }
+
+export type PokedexProps = {
+  pokemonList: Pokemon[];
+  setPokemonList: (data: Pokemon[]) => void;
+  pokemonCount: number;
+  page: number;
+  setPage: (data: number) => void
+}
+
+export type PaginationProps = {
+  setPokemonList: (data: Pokemon[]) => void;
+  pokemonCount: number;
+  page: number;
+  setPage: (data: number) => void;
+}
