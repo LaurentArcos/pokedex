@@ -1,33 +1,21 @@
-import { SyntheticEvent, useState } from "react";
+import { Pokemon } from "../@types/Pokemon"
+import PokemonCard from "./PokemonCard"
+import "../assets/styles/pokedex.scss"
 
-const SearchPokemon = () => {
-    const [inputValue, setInputValue] = useState("");
-
-    const handleSubmit = (event: SyntheticEvent) => {
-        event.preventDefault();
-
-        console.log(inputValue);
-    }
-
-    const handleReset = () => {
-        setInputValue("");
-    }
+const Pokedex = (props: { pokemonList: Pokemon[] }) => {
+    console.log(props.pokemonList)
 
     return (
-        <>
+        <div className="pokedex">
             <div className="main-container">
-                <form onSubmit={handleSubmit}>
-                    <input 
-                        type="text" 
-                        placeholder="Search Pokemon" 
-                        value={inputValue}
-                        onChange={(e) => setInputValue(e.target.value)} />
-                    <button type="submit">Search</button>
-                    <button type="button" onClick={handleReset}>Reset</button>
-                </form>
+                <div className="pokedex__list">
+                    {props.pokemonList.map((pokemon: Pokemon) => (
+                        <PokemonCard pokemon={pokemon} />
+                    ))}
+                </div>
             </div>
-        </>
+        </div>
     )
 }
 
-export default SearchPokemon;
+export default Pokedex
