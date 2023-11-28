@@ -30,6 +30,5 @@ export type PokedexProps = {
 export type PaginationProps = {
   setPokemonList: (data: Pokemon[]) => void;
   pokemonCount: number;
-  page: number;
   setPage: (data: number) => void;
 }

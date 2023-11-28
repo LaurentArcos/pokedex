@@ -34,6 +34,7 @@ const PokedexView = () => {
             <SearchPokemon setPokemonList={setPokemonList} />
             <Pokedex
                 pokemonList={pokemonList}
+                setPokemonList={setPokemonList}
                 pokemonCount={pokemonCount}
                 page={page}
                 setPage={setPage} />

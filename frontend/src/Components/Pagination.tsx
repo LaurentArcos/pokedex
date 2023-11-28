@@ -8,11 +8,9 @@ const Pagination = ({pokemonCount, setPage, setPokemonList}: PaginationProps) =>
         items.push(i);
     }
 
-    const handleClick = async (e: React.MouseEvent) => {
-        console.log('CLICK')
-        const page = Number(e.currentTarget.textContent);
-        const {pokemonData} = await fetchPokemonList(page);
-        setPage(page);
+    const handleClick = async (item: number) => {
+        const {pokemonData} = await fetchPokemonList(item);
+        setPage(item);
         setPokemonList(await pokemonData);
     }
 
@@ -21,7 +19,7 @@ const Pagination = ({pokemonCount, setPage, setPokemonList}: PaginationProps) =>
             <nav className="pagination">
                 <ul>
                     {items.map((item) => (
-                        <li onClick={handleClick}>
+                        <li onClick={() => handleClick(item)}>
                             {item}
                         </li>
                     ))}
