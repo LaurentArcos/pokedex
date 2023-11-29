@@ -5,6 +5,7 @@ import Pokedex from "../Components/Pokedex"
 import { Pokemon } from "../@types/Pokemon"
 import SearchPokemon from "../Components/SearchPokemon"
 import { fetchPokemonList } from "../api/fetchPokemonList"
+import { ToastContainer, toast } from "react-toastify"
 
 const PokedexView = () => {
     const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
@@ -30,6 +31,7 @@ const PokedexView = () => {
 
     return (
         <>
+            <ToastContainer />
             <HeroSection />
             <SearchPokemon setPokemonList={setPokemonList} />
             <Pokedex

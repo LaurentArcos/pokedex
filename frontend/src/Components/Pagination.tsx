@@ -1,6 +1,6 @@
-import React from "react";
 import { PaginationProps } from "../@types/Pokemon";
 import { fetchPokemonList } from "../api/fetchPokemonList";
+import "../assets/styles/pagination.scss";
 
 const Pagination = ({pokemonCount, setPage, setPokemonList}: PaginationProps) => {
     const items = [];

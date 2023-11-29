@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { fetchPokemon } from "./fetchPokemon";
 
 export const fetchPokemonList = async (page: number) => {
@@ -9,6 +10,8 @@ export const fetchPokemonList = async (page: number) => {
     const promises = data.results.map(
         async (pokemon: {name: string}) => (await fetchPokemon(pokemon.name))
     );
+
+    toast.success('Pokemons Loaded !');
 
     return {
         pokemonData: Promise.all(promises),
