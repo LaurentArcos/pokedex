@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { PaginationProps } from "../@types/Pokemon";
 import { fetchPokemonList } from "../api/fetchPokemonList";
 import "../assets/styles/pagination.scss";
-import { useTheme } from "../hooks/useTheme";
+import { useTheme } from "../hooks/usetheme";
 
 const Pagination = ({pokemonCount, page, setPage, setPokemonList}: PaginationProps) => {
     const theme = useContext(useTheme);
@@ -77,5 +77,4 @@ const Pagination = ({pokemonCount, page, setPage, setPokemonList}: PaginationPro
         </>
     )
 }
-
 export default Pagination
