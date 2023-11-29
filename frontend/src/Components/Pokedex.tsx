@@ -15,6 +15,7 @@ const Pokedex = (props: PokedexProps) => {
                 <Pagination 
                     setPokemonList={props.setPokemonList}
                     pokemonCount={props.pokemonCount} 
+                    page={props.page}
                     setPage={props.setPage} />
             </div>
         </div>

@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import PokedexView from './views/PokedexView'
 import PokemonDetailsView from './views/PokemonDetailsView'
 import 'react-toastify/dist/ReactToastify.css';
+import { ThemeProvider, useTheme } from './hooks/useTheme'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.Fragment>
-    <RouterProvider router={router}/>
+    <ThemeProvider>
+      <RouterProvider router={router}/>
+    </ThemeProvider>
   </React.Fragment>,
 )
