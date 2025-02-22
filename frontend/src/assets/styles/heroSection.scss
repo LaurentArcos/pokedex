@@ -6,6 +6,35 @@
   position: relative;
   overflow: hidden;
 
+  .hero-data-features {
+    display: flex;
+    flex-direction: row;
+
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  .hero-feature {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feature-value{
+    display: flex;
+    flex-direction: row;
+
+    span {
+      margin-left: 0.5rem;
+      align-self: center;
+    }
+  }
+
+  .feature-label {
+    padding-right: 2rem;
+  }
+
   &::before,
   &::after {
     content: "";

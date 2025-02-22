@@ -8,6 +8,7 @@ nav.pagination {
         border: 1px solid #2f5aff;
         padding: 10px;
         border-radius: 5px;
+        cursor: pointer;
 
         &.current, &.prev, &.next {
           background-color: #2f5aff;
