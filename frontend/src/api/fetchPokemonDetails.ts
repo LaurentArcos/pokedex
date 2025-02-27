@@ -34,8 +34,10 @@ export const fetchPokemonDetails = async (pokemon: string | number) => {
     // Récupération de la couleur depuis speciesData.color
     const color = speciesData.color?.name || "#ffffff";
 
-    // Retourne les données combinées en remplaçant le nom par sa version française
-    return { ...data, description, name: frenchName, category, color };
+    // Combine les données et remplace le nom par sa version française
+    const combinedData = { ...data, description, name: frenchName, category, color };
+    
+    return combinedData;
   } catch (error) {
     console.error("Erreur lors de la récupération des détails du Pokémon:", error);
     return null;

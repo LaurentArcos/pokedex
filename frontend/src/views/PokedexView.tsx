@@ -6,10 +6,11 @@ import Pokedex from "../Components/Pokedex";
 import SearchPokemon from "../Components/SearchPokemon";
 import { fetchPokemonList } from "../api/fetchPokemonList";
 import { ToastContainer } from "react-toastify";
-import { Pokemon } from "../types/Pokemon";
+import { Pokemon } from "../@types/Pokemon";
 
 const PokedexView = () => {
   const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
+  const [originalPokemonList, setOriginalPokemonList] = useState<Pokemon[]>([]);
   const [pokemonCount, setPokemonCount] = useState(0);
   const [page, setPage] = useState(1);
   const [selectedPokemon, setSelectedPokemon] = useState<Pokemon | null>(null);
@@ -19,6 +20,7 @@ const PokedexView = () => {
       const { pokemonData, pokemonCount } = await fetchPokemonList(page);
       const list = await pokemonData;
       setPokemonList(list);
+      setOriginalPokemonList(list);
       setPokemonCount(pokemonCount);
       if (!selectedPokemon && list.length > 0) {
         const randomIndex = Math.floor(Math.random() * list.length);
@@ -34,14 +36,18 @@ const PokedexView = () => {
         selectedPokemon={selectedPokemon}
         setSelectedPokemon={setSelectedPokemon}
       />
-      <SearchPokemon setPokemonList={setPokemonList} />
+      <SearchPokemon 
+         setPokemonList={setPokemonList} 
+         originalPokemonList={originalPokemonList}
+         setPokemonCount={setPokemonCount}
+      />
       <Pokedex
         pokemonList={pokemonList}
         setPokemonList={setPokemonList}
         pokemonCount={pokemonCount}
         page={page}
         setPage={setPage}
-        onSelect={setSelectedPokemon} // Mise à jour du Pokémon sélectionné via la fonction onSelect
+        onSelect={setSelectedPokemon}
       />
       <Footer />
     </>

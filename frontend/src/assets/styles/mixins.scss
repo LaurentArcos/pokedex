@@ -14,7 +14,7 @@
   } @else if ( $type == 'fire' ) {
     $colour: #ff9900;
   } @else if ( $type == 'flying' ) {
-    $colour: #89bdff;
+    $colour: #76affa;
   } @else if ( $type == 'ghost' ) {
     $colour: #4e6aff;
   } @else if ( $type == 'grass' ) {
@@ -22,7 +22,7 @@
   } @else if ( $type == 'ground' ) {
     $colour: #ff6b0d;
   } @else if ( $type == 'ice' ) {
-    $colour: #2ee4c6;
+    $colour: #15bda1;
   } @else if ( $type == 'normal' ) {
     $colour: #9fa39d;
   } @else if ( $type == 'poison' ) {
@@ -32,7 +32,7 @@
   } @else if ( $type == 'rock' ) {
     $colour: #d8bc5a;
   } @else if ( $type == 'steel' ) {
-    $colour: #23a1bd;
+    $colour: #1998b4;
   } @else if ( $type == 'water' ) {
     $colour: #14a8ff;
   }

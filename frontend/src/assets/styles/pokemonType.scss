@@ -1,5 +1,6 @@
-@use 'functions';
-@import "mixins";
+@use "sass:map";
+@use "functions";
+@use "mixins";
 
 $types: fire, grass, poison, water, flying;
 
@@ -18,8 +19,6 @@ button {
   text-transform: capitalize;
   color: #fff;
 
-  $test: 20px;
-
   img {
     width: 1rem;
     height: 1rem;
@@ -27,6 +26,7 @@ button {
 
   @each $type in $types {
     &.type--#{$type} {
+      // Avec @use, on doit accéder aux fonctions via leur namespace
       background: functions.typeColor($type);
     }
   }

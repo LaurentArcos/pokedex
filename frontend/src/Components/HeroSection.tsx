@@ -16,7 +16,6 @@ const HeroSection = ({ selectedPokemon, setSelectedPokemon }: HeroSectionProps) 
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Si aucun Pokémon n'est sélectionné, on en choisit un aléatoirement (entre 1 et 1304)
     if (!selectedPokemon) {
       const randomPokemonId = Math.floor(Math.random() * 1304) + 1;
       fetchPokemonDetails(randomPokemonId).then((data) => {
@@ -57,11 +56,10 @@ const HeroSection = ({ selectedPokemon, setSelectedPokemon }: HeroSectionProps) 
                 <PokemonType key={item.type.name} type={item.type.name} />
               ))}
             </div>
+            {/* Affichage du nom et de la catégorie en français */}
             <h1 className="hero-data-name">{selectedPokemon.name}</h1>
             {selectedPokemon.category && (
-              <span className="hero-data-category">
-                {selectedPokemon.category}
-              </span>
+              <span className="hero-data-category">{selectedPokemon.category}</span>
             )}
             <p className="hero-data-description">{selectedPokemon.description}</p>
             <div className="hero-data-features">

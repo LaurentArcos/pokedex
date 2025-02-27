@@ -1,5 +1,5 @@
 // src/Components/PokemonCard.tsx
-import { Pokemon } from "../types/Pokemon";
+import { Pokemon } from "../@types/Pokemon";
 import PokemonType from "./pokemonType";
 import iconWeight from "../assets/images/icon-weight.svg";
 import iconRuler from "../assets/images/icon-ruler.svg";
@@ -23,11 +23,10 @@ const PokemonCard = ({ pokemon, onSelect }: PokemonCardProps) => {
   };
 
   const handleClick = () => {
-    // Récupère les détails complets du Pokémon, y compris la description
+    // Récupère les détails complets (déjà en français) et met à jour le Pokémon affiché dans la HeroSection
     fetchPokemonDetails(pokemon.id).then((data) => {
       if (data) {
         onSelect(data);
-        // Effectue un scroll fluide vers le haut de la page
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
     });
@@ -41,11 +40,11 @@ const PokemonCard = ({ pokemon, onSelect }: PokemonCardProps) => {
       </div>
       <span className="pokemon__number">{formatPokemonId(pokemon.id)}</span>
       <div className="pokemon__type">
-        {pokemon.types.map(({ type }) => (
-          <PokemonType key={type.name} type={type.name} />
-        ))}
+      {pokemon.types.map(({ type }: { type: { name: string; url: string } }) => (
+        <PokemonType key={type.name} type={type.name} />
+      ))}
       </div>
-      {/* Utilise le nom en français s'il est défini */}
+      {/* Ici, pokemon.name contient la version française */}
       <span className="pokemon__name">{pokemon.name}</span>
       {pokemon.category && (
         <span className="pokemon__category">{pokemon.category}</span>

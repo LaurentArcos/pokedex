@@ -1,4 +1,5 @@
-@import "mixins";
+@use "mixins" as *;
+
 
 @keyframes fadedown {
   from {
@@ -62,7 +63,7 @@
       @include pokemon-type('dark');
     }
 
-    &.pokemon__overlay--dragon::after {
+    &.pokemon__overlay--dragon::after { 
       @include pokemon-type('dragon');
     }
 
